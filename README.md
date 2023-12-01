@@ -3,6 +3,7 @@
 
 ```
 git clone https://github.com/chaseungjoon/CSAT-Level-Grader.git
+cd CSAT-Level-Grader
 pip install -r requirements.txt
 python main.py
 ```
