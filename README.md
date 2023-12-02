@@ -1,6 +1,8 @@
 # CSAT-Level-Grader
 수능 &amp; 모의평가의 표준점수 정보를 이용해 각 시험의 국어 / 수학 난이도를 점수화한다
 
+❗실행방법
+
 ```
 git clone https://github.com/chaseungjoon/CSAT-Level-Grader.git
 cd CSAT-Level-Grader
