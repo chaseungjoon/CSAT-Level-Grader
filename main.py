@@ -5,7 +5,6 @@ import os
 csat_info_path = "csat_info"
 csat_years = []
 
-
 def get_subject_info(subject, year):
     if year == 2017:
         if subject == "korean": return "국수영", "A:E"
@@ -14,7 +13,6 @@ def get_subject_info(subject, year):
         if subject == "korean": return "국수", "A:E"
         if subject == "math": return "국수", "F:J"
         if subject == "physics1": return "사과탐", "A:E"
-
 
 def get_xlsx_file_paths(directory):
     files_and_folders = os.listdir(directory)
@@ -43,8 +41,12 @@ def read_std_score(subject, file_path):
 
     return filtered_df
 
-
 def calculate_difficulty(df):
+    df['std_score'] = pd.to_numeric(df['std_score'], errors='coerce')
+    df['total'] = pd.to_numeric(df['total'], errors='coerce')
+
+    df = df.dropna(subset=['std_score', 'total'])
+
     total_applicants = df['acc'].iloc[-1]
     upper_limit = total_applicants * 0.04
 
