@@ -45,6 +45,11 @@ def read_std_score(subject, file_path):
 
 
 def calculate_difficulty(df):
+    df['std_score'] = pd.to_numeric(df['std_score'], errors='coerce')
+    df['total'] = pd.to_numeric(df['total'], errors='coerce')
+
+    df = df.dropna(subset=['std_score', 'total'])
+
     total_applicants = df['acc'].iloc[-1]
     upper_limit = total_applicants * 0.04
 
@@ -60,7 +65,6 @@ def calculate_difficulty(df):
         'std_max': std_max,
         'upper_bound': upper_bound,
     }
-
 
 def difficulty_score(test, std_max_weight=0.4, std_dev_weight=0.35, upper_bound_weight=0.3, mean_weight=0.1):
     difficulty_score = (std_max_weight * test['std_max']) + \
