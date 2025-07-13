@@ -19,5 +19,7 @@ python main.py
 ```
 #
 
-<img width="997" alt="image" src="https://github.com/chaseungjoon/CSAT-Level-Grader/assets/101884270/428e2c78-c8be-4bb0-a633-2c84953bd07d">
-<img width="996" alt="image" src="https://github.com/chaseungjoon/CSAT-Level-Grader/assets/101884270/0c960b1f-f5a4-455a-9b39-0648ac18cdda">
+<img width="644" height="387" alt="Screenshot 2025-07-13 at 3 04 01 PM" src="https://github.com/user-attachments/assets/e5cf8005-6c5e-42f4-bcc2-763d23a0924c" />
+<img width="643" height="384" alt="Screenshot 2025-07-13 at 3 04 13 PM" src="https://github.com/user-attachments/assets/c73db204-c7e7-410a-b015-1c7f966bcb55" />
+
+
