@@ -20,7 +20,6 @@ def get_xlsx_file_paths(directory):
 
     return xlsx_file_paths
 
-
 def read_std_score(subject, file_path):
     year = int(os.path.basename(file_path)[:4])
     sheet, cols = get_subject_info(subject, year)
@@ -75,7 +74,7 @@ def difficulty_score(test, std_max_weight=0.4, std_dev_weight=0.35, upper_bound_
 def graph_results(scores, subject):
     x_positions = range(len(csat_years))
 
-    plt.figure(figsize=(10, 6))
+    plt.figure(figsize=(14, 6))
     plt.plot(x_positions, scores, marker='o')
     plt.title(f'Yearly CSAT - {subject} Difficulty')
     plt.xlabel('Exams')
@@ -84,24 +83,18 @@ def graph_results(scores, subject):
     plt.xticks(x_positions, csat_years)
     plt.show()
 
-
 def print_results(scores, subject):
     for i, score in enumerate(scores):
         print(f'{csat_years[i]} {subject} : {int(score)}')
 
-
-def sort_key(path):
-    year = int(os.path.basename(path)[:4])
-
-    if '6월' in path:
-        exam_type = 1
-    elif '9월' in path:
-        exam_type = 2
+def find_exam_type(file_name):
+    fname = list(file_name)[4:]
+    if '6' in fname:
+        return 1
+    elif '9' in fname:
+        return 2
     else:
-        exam_type = 3
-
-    return (year, exam_type)
-
+        return 0
 
 def main():
     # 난이도 정보 리스트
@@ -110,16 +103,18 @@ def main():
 
     # 엑셀 파일 정렬 & 추출
     xlsx_files = get_xlsx_file_paths(csat_info_path)
-    xlsx_files = sorted(xlsx_files, key=sort_key)
+    xlsx_files = sorted(xlsx_files)
 
     for file in xlsx_files:
         file_name = os.path.basename(file)
-        if "6월" in file_name:
-            csat_years.append(file_name[:4] + '-6')
-        elif "9월" in file_name:
-            csat_years.append(file_name[:4] + '-9')
+        year = file_name[:4]
+        exam_type = find_exam_type(file_name)
+        if exam_type==1:
+            csat_years.append(year + '-6')
+        elif exam_type==2:
+            csat_years.append(year + '-9')
         else:
-            csat_years.append(file_name[:4])
+            csat_years.append(year)
 
     # 점수 산출
     for file in xlsx_files:
