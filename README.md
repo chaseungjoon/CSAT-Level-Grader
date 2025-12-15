@@ -19,5 +19,5 @@ python main.py
 ```
 #
 
-<img width="997" alt="image" src="https://github.com/chaseungjoon/CSAT-Level-Grader/assets/101884270/428e2c78-c8be-4bb0-a633-2c84953bd07d">
-<img width="996" alt="image" src="https://github.com/chaseungjoon/CSAT-Level-Grader/assets/101884270/0c960b1f-f5a4-455a-9b39-0648ac18cdda">
+![img.png](img.png)
+![img_2.png](img_2.png)
