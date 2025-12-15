@@ -15,9 +15,9 @@
 git clone https://github.com/chaseungjoon/CSAT-Level-Grader.git
 cd CSAT-Level-Grader
 pip install -r requirements.txt
-python main.py
+python3 main.py
 ```
 #
 
-![img.png](img.png)
-![img_2.png](img_2.png)
+![mathplot](mathplot.png)
+![koreanplot](koreanplot.png)
