@@ -20,4 +20,4 @@ python3 main.py
 #
 
 ![mathplot](mathplot.png)
-![koreanplot](koreanplot.png)
+![koreaplot](koreaplot.png)
